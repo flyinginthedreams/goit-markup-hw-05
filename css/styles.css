@@ -77,6 +77,11 @@ ul {
   height: 1px;
   left: -1px;
 }
+img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
 
 /* Header section */
 .header {
@@ -96,6 +101,8 @@ ul {
   display: block;
   padding-top: 24px;
   padding-bottom: 24px;
+  position: relative;
+  transition: color 0.25s cubic-bezier(0.4, 0, 0.2, 1);
 }
 .logo-colour {
   color: var(--logo-colour);
@@ -103,6 +110,20 @@ ul {
 .link:hover,
 .link:focus {
   color: #404bbf;
+}
+.link-style.active {
+  color: #4d5ae5;
+}
+
+.link-style.active::after {
+  content: "";
+  width: 100%;
+  height: 4px;
+  background-color: #404bbf;
+  position: absolute;
+  left: 0px;
+  bottom: 0px;
+  border-radius: 2px;
 }
 
 .header-navigation {
@@ -205,6 +226,7 @@ ul {
 .hero-btn:focus {
   color: var(--porfolio-background-colour);
   background: var(--accent-colour);
+  transition: color 0.25s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 /* /Hero section */
@@ -379,6 +401,7 @@ img {
 
 .team-social-link:is(:hover, :focus) {
   background-color: #404bbf;
+  transition: color 0.25s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 /* /Team section */
@@ -417,9 +440,11 @@ img {
 
 .customers-link:is(:hover, :focus) {
   border-color: #404bbf;
+  transition: color 0.25s cubic-bezier(0.4, 0, 0.2, 1);
 }
 .customers-link:is(:hover, :focus) .customer-icon {
   fill: #404bbf;
+  transition: color 0.25s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .customer-icon {
@@ -483,10 +508,75 @@ footer .social-link {
   gap: 16px;
 }
 footer .team-social-link:is(:hover, :focus) {
-  background-color: #568f45;
+  background-color: #31d0aa;
+  transition: color 0.25s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 /* /Footer section */
+
+.backdrop {
+  width: 100%;
+  height: 100%;
+  background-color: rgba(46, 47, 66, 0.4);
+
+  position: fixed;
+  top: 0;
+  left: 0;
+  transition: opacity 0.25s cubic-bezier(0.4, 0, 0.2, 1),
+    visibility 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.is-hidden {
+}
+.modal {
+  width: 408px;
+  min-height: 577px;
+  background: #ffffff;
+  box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 1px 3px rgba(0, 0, 0, 0.12),
+    0px 2px 1px rgba(0, 0, 0, 0.2);
+  border-radius: 4px;
+
+  padding: 24px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(1);
+  transition: transform 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.modal-close {
+  display: flex;
+  margin-left: auto;
+  width: 24px;
+  height: 24px;
+  background-color: #e7e9fc;
+  opacity: 0.1;
+  border: 1px solid #2e2f42;
+  border-radius: 50%;
+  justify-content: center;
+  align-items: center;
+}
+.close-button {
+  fill: black;
+}
+
+.close-button:is(:hover, :focus) {
+  fill: white;
+  transition: color 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.close-button:hover .modal-close {
+  background-color: #4d5ae5;
+  transition: color 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.is-hidden {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+.backdrop.is-hidden .modal {
+  transform: translate(-50%, -50%) scale(0);
+}
 
 /* ----------Portfplio.html---------- */
 .main-section {
@@ -501,6 +591,7 @@ footer .team-social-link:is(:hover, :focus) {
 
   gap: 24px;
   margin-bottom: 72px;
+  transition: color 0.25s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .main-button-item:hover,
@@ -510,6 +601,7 @@ footer .team-social-link:is(:hover, :focus) {
   border-color: var(--accent-colour);
   box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1), 0px 2px 1px rgba(0, 0, 0, 0.08),
     0px 2px 2px rgba(0, 0, 0, 0.12);
+  transition: color 0.25s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .main-button-item {
@@ -550,7 +642,9 @@ footer .team-social-link:is(:hover, :focus) {
   box-shadow: 0px 1px 6px rgba(46, 47, 66, 0.08),
     0px 1px 1px rgba(46, 47, 66, 0.16), 0px 2px 1px rgba(46, 47, 66, 0.08);
   border-radius: 0px 0px 4px 4px;
+  transition: color 0.25s cubic-bezier(0.4, 0, 0.2, 1);
 }
+
 .item-link {
   display: block;
 }
@@ -562,6 +656,37 @@ footer .team-social-link:is(:hover, :focus) {
   border-top: none;
 
   padding: 32px 16px;
+}
+
+.item-top {
+  position: relative;
+  overflow: hidden;
+}
+
+.preview-item-text-overlay {
+  background-color: #4d5ae5;
+  mix-blend-mode: normal;
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.5;
+  letter-spacing: 0.02em;
+  color: #f4f4fd;
+
+  padding: 40px 32px 164px 32px;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  overflow: auto;
+  transform: translateY(100%);
+  transition: transform 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.item-link:hover .preview-item-text-overlay {
+  transform: translateY(0);
 }
 .preview-name {
   font-weight: 500;
