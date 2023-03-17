@@ -165,6 +165,8 @@ img {
 
   padding-top: 24px;
   padding-bottom: 24px;
+
+  transition: color 0.25s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 /* /Header section */
@@ -394,6 +396,7 @@ img {
   border-radius: 50%;
   background-color: #4d5ae5;
   color: #ffffff;
+  transition: color 0.25s cubic-bezier(0.4, 0, 0.2, 1);
 }
 .team-social-icon {
   fill: white;
@@ -401,7 +404,6 @@ img {
 
 .team-social-link:is(:hover, :focus) {
   background-color: #404bbf;
-  transition: color 0.25s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 /* /Team section */
@@ -436,15 +438,14 @@ img {
   border-radius: 4px;
   width: 168px;
   height: 88px;
+  transition: color 0.25s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .customers-link:is(:hover, :focus) {
   border-color: #404bbf;
-  transition: color 0.25s cubic-bezier(0.4, 0, 0.2, 1);
 }
 .customers-link:is(:hover, :focus) .customer-icon {
   fill: #404bbf;
-  transition: color 0.25s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .customer-icon {
@@ -509,7 +510,6 @@ footer .social-link {
 }
 footer .team-social-link:is(:hover, :focus) {
   background-color: #31d0aa;
-  transition: color 0.25s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 /* /Footer section */
@@ -549,25 +549,25 @@ footer .team-social-link:is(:hover, :focus) {
   width: 24px;
   height: 24px;
   background-color: #e7e9fc;
-  opacity: 0.1;
   border: 1px solid #2e2f42;
   border-radius: 50%;
   justify-content: center;
   align-items: center;
+  cursor: pointer;
 }
 .close-button {
   fill: black;
 }
+.modal-close:is(:hover, :focus) {
+  background-color: #404bbf;
+  transition: color 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+}
 
-.close-button:is(:hover, :focus) {
+.modal-close:hover .close-button {
+  transition: color 0.25s cubic-bezier(0.4, 0, 0.2, 1);
   fill: white;
-  transition: color 0.25s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.close-button:hover .modal-close {
-  background-color: #4d5ae5;
-  transition: color 0.25s cubic-bezier(0.4, 0, 0.2, 1);
-}
 .is-hidden {
   opacity: 0;
   visibility: hidden;
@@ -601,7 +601,6 @@ footer .team-social-link:is(:hover, :focus) {
   border-color: var(--accent-colour);
   box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1), 0px 2px 1px rgba(0, 0, 0, 0.08),
     0px 2px 2px rgba(0, 0, 0, 0.12);
-  transition: color 0.25s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .main-button-item {
@@ -620,6 +619,7 @@ footer .team-social-link:is(:hover, :focus) {
   line-height: 1.5;
   cursor: pointer;
   font-weight: 500;
+  transition: color 0.25s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .preview {
@@ -641,12 +641,12 @@ footer .team-social-link:is(:hover, :focus) {
 .item-link:is(:hover, :focus) {
   box-shadow: 0px 1px 6px rgba(46, 47, 66, 0.08),
     0px 1px 1px rgba(46, 47, 66, 0.16), 0px 2px 1px rgba(46, 47, 66, 0.08);
-  border-radius: 0px 0px 4px 4px;
-  transition: color 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+  /* transition: color 0.25s cubic-bezier(0.4, 0, 0.2, 1); */
 }
 
 .item-link {
   display: block;
+  transition: color 0.25s cubic-bezier(0.4, 0, 0.2, 1);
 }
 .preview-text {
   border-left: var(--frame-colour);
