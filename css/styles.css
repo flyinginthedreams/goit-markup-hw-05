@@ -396,7 +396,7 @@ img {
   border-radius: 50%;
   background-color: #4d5ae5;
   color: #ffffff;
-  transition: color 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: background-color 0.25s cubic-bezier(0.4, 0, 0.2, 1);
 }
 .team-social-icon {
   fill: white;
@@ -438,7 +438,7 @@ img {
   border-radius: 4px;
   width: 168px;
   height: 88px;
-  transition: color 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: border-color 0.25s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .customers-link:is(:hover, :focus) {
@@ -450,6 +450,7 @@ img {
 
 .customer-icon {
   fill: #8e8f99;
+  transition: fill 0.25s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 /* /Customers section */
@@ -554,6 +555,7 @@ footer .team-social-link:is(:hover, :focus) {
   justify-content: center;
   align-items: center;
   cursor: pointer;
+  border: 1px solid rgba(0, 0, 0, 0.1);
 }
 .close-button {
   fill: black;
@@ -619,7 +621,10 @@ footer .team-social-link:is(:hover, :focus) {
   line-height: 1.5;
   cursor: pointer;
   font-weight: 500;
-  transition: color 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: color 0.25s cubic-bezier(0.4, 0, 0.2, 1),
+    background 0.25s cubic-bezier(0.4, 0, 0.2, 1),
+    border-color 0.25s cubic-bezier(0.4, 0, 0.2, 1),
+    box-shadow 0.25s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .preview {
@@ -641,12 +646,11 @@ footer .team-social-link:is(:hover, :focus) {
 .item-link:is(:hover, :focus) {
   box-shadow: 0px 1px 6px rgba(46, 47, 66, 0.08),
     0px 1px 1px rgba(46, 47, 66, 0.16), 0px 2px 1px rgba(46, 47, 66, 0.08);
-  /* transition: color 0.25s cubic-bezier(0.4, 0, 0.2, 1); */
 }
 
 .item-link {
   display: block;
-  transition: color 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: box-shadow 0.25s cubic-bezier(0.4, 0, 0.2, 1);
 }
 .preview-text {
   border-left: var(--frame-colour);
